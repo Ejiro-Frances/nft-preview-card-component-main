@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ### Primary */
+
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* ### Neutral */
+  --very-dark-blue-main-BG: hsl(217, 54%, 11%);
+  --very-dark-blue-card-BG: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--very-dark-blue-main-BG);
+  font-family: "Outfit", serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card-container {
+  background: var(--very-dark-blue-card-BG);
+  border-radius: 1.5rem;
+  padding: 2rem 3rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.cube-img-container {
+  margin-bottom: 2rem;
+}
+.cube-img {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.card-title {
+  color: var(--white);
+  margin-bottom: 1.3rem;
+  cursor: pointer;
+}
+.card-title:hover {
+  color: var(--cyan);
+}
+.text--c {
+  color: var(--soft-blue);
+}
+
+.card-description {
+  margin-bottom: 1.3rem;
+}
+
+.extra-d-block {
+  display: flex;
+  justify-content: space-between;
+}
+.eth-block,
+.time-block {
+  display: flex;
+  align-items: center;
+}
+.eth-qty {
+  color: var(--cyan);
+}
+.duration,
+.eth-qty {
+  margin-left: 0.8rem;
+}
+
+.creator-container {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  border-top: 0.1px solid var(--soft-blue);
+  padding-top: 3rem;
+  margin-top: 2rem;
+}
+
+.avatar-container {
+  max-width: 4rem;
+  max-height: 4rem;
+  object-fit: fill;
+  border: 1px solid var(--soft-blue);
+  border-radius: 50%;
+}
+.avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.creator {
+  color: var(--white);
+  cursor: pointer;
+}
+.creator:hover {
+  color: var(--cyan);
+}
