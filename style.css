@@ -15,9 +15,9 @@
   --cyan: hsl(178, 100%, 50%);
 
   /* ### Neutral */
-  --very-dark-blue-main-BG: hsl(217, 54%, 11%);
-  --very-dark-blue-card-BG: hsl(216, 50%, 16%);
-  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --main-BG: hsl(217, 54%, 11%);
+  --card-BG: hsl(216, 50%, 16%);
+  --blue-line: hsl(215, 32%, 27%);
   --white: hsl(0, 0%, 100%);
 }
 
@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  background: var(--very-dark-blue-main-BG);
+  background: var(--main-BG);
   font-family: "Outfit", serif;
   font-size: 1.8rem;
   line-height: 1.5;
@@ -37,25 +37,63 @@ body {
 }
 
 .card-container {
-  background: var(--very-dark-blue-card-BG);
+  background: var(--card-BG);
   border-radius: 1.5rem;
   padding: 2rem 3rem;
   max-width: 40rem;
   margin: 0 auto;
+  box-shadow: 0 2rem 3rem hsl(217, 50%, 7%);
 }
 .cube-img-container {
+  position: relative;
+  z-index: 1;
   margin-bottom: 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .cube-img {
-  border-radius: 1rem;
+  display: block;
   width: 100%;
   height: 100%;
 }
-
+.cube-img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: auto;
+  background: var(--cyan);
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+.cube-img-container:hover::after {
+  opacity: 0.4;
+}
+.eye-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+.cube-img-container:hover .eye-view {
+  opacity: 1;
+}
 .card-title {
+  display: inline-block;
+  text-decoration: none;
+  font-family: inherit;
   color: var(--white);
   margin-bottom: 1.3rem;
   cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 .card-title:hover {
   color: var(--cyan);
@@ -89,7 +127,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  border-top: 0.1px solid var(--soft-blue);
+  border-top: 0.1px solid var(--blue-line);
   padding-top: 3rem;
   margin-top: 2rem;
 }
@@ -107,8 +145,10 @@ body {
 }
 
 .creator {
+  text-decoration: none;
   color: var(--white);
   cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 .creator:hover {
   color: var(--cyan);
